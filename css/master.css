@@ -1,0 +1,94 @@
+/* http://www.colorcombos.com/color-schemes/36/ColorCombo36.html
+red: FF3333
+grey: 999999
+blue: 669999
+dk blgrn: 003333 */
+
+h1, li, p, button {
+  font-family: 'Ubuntu', sans-serif;
+  color: #bcd8c1;
+}
+
+#page {
+  margin: 0 auto;
+  padding-top: 1em;
+  max-width: 500px;
+  background-color: #007991;
+  text-align: center;
+  border-radius: 15px;
+}
+
+#header {
+  text-align: center;
+}
+
+ul,
+#newItemForm {
+  width: 70%;
+  margin: 0 15% 10%;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  color: #033f5f;
+  list-style: none;
+  text-align: center;
+  border-radius: 5px;
+  padding: .2em .5em;
+  margin-bottom: .5em;
+  background: #8fb4b4;
+  font-weight: 600;
+}
+
+li a {
+  float: left;
+  color: #de7c7c;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+  padding-right: .3em;
+}
+
+#itemDescription {
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-border-radius: 5px;
+  padding: 5px 0; 
+  border-radius: 5px;
+  background: #ddd;
+  color: #222;
+  width: 73%;
+  text-align: center;
+  margin-left: 0;
+  border: 2px solid #ddd;
+  margin-bottom: 3em;
+}
+
+#addButton {
+  font-family: 'Ubuntu', sans-serif;
+  background: #8fb4b4;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; 
+  width: 22%;
+  cursor:pointer;
+  padding: 6px 0;
+  border: 0;
+  margin-right: 0;
+  color: #033f5f;
+  font-weight: 600;
+}
+
+#itemDescription:focus {
+    border: 2px solid #fff;
+    background: #fff;
+}
+
+.error {
+  color: #db9494;
+  font-weight: bold;
+}
+
