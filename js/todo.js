@@ -8,6 +8,18 @@ $(function() {
   var $fiveMsg = $($.parseHTML(fiveItemsText));
   var $errorMsg = $($.parseHTML(emptyItemText));
 
+  // Check for existing JSON list data
+  var xhr = new XMLHttpRequest();
+
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      document.writeln('hooray!');
+    }
+  };
+
+  xhr.open('GET', 'json\list.json', 'true');
+  xhr.send(null);
+
   function addItem() {
     // Add new item to list
     $newItemForm.on('submit', function(e) {
@@ -20,17 +32,17 @@ $(function() {
         var $newMsg = $($errorMsg).hide().fadeIn(1000);
         $form.prepend($newMsg);
       };
-      
+
       // Surprise five list items message
       if ($('li').length == 5) {
-        var $niceMsg = 
+        var $niceMsg =
         $form.prepend($fiveMsg.hide().fadeIn(800).delay(1000).fadeOut(500));
       }
-      
+
       if ($('li').length >= 1) {
           $('ul').css("margin-bottom", "5%");
       }
-      
+
 
     });
 
