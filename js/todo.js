@@ -18,15 +18,14 @@ $(function() {
     // database.ref('list' + newPostKey).set({
     //   item: 'Shoe shine from firebase'
     // })
-    database.ref('list-KuDgnRz_PqLHBS9lSDC').remove()
+
+    // database.ref('list-KuDgnRz_PqLHBS9lSDC').remove()
   }
   addItemToDb()
 
   database.ref('list').on('value', function(snapshot) {
     console.log(snapshot.val())
   })
-
-
 
   // Check for existing JSON list data
   // var xhr = new XMLHttpRequest();
@@ -74,8 +73,22 @@ $(function() {
 
         // Add item to list if not empty string
         var newText = $textInput.val();
-        $('ul').append('<li class="todo-item"><a href="#">x</a> ' + newText + '</li>');
+        // $('ul').append('<li class="todo-item"><a href="#">x</a> ' + newText + '</li>');
         $textInput.val('');
+
+        function addItemToDb(newListItem) {
+          // A post entry.
+          var postData = {
+            item: newListItem
+          };
+
+          // Get a key for a new Post.
+          var newPostKey = firebase.database().ref().child('posts').push().key;
+
+          database.ref('list' + newPostKey).set(postData)
+        }
+
+        addItemToDb(newText)
 
         // Add item to JSON file ================== Trying to...
         // var listLength = responseObject;
@@ -95,7 +108,7 @@ $(function() {
       }
 
       if ($('li').length >= 1) {
-          $('ul').css("margin-bottom", "5%");
+        $('ul').css("margin-bottom", "5%");
       }
     });
 
@@ -109,9 +122,9 @@ $(function() {
   addItem();
 
   // Sort items using jQuery UI
-  $( function() {
-    $( "ul" ).sortable();
-    $( "ul" ).disableSelection();
+  $(function() {
+    $("ul").sortable();
+    $("ul").disableSelection();
   });
 
 });
