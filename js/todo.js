@@ -24,6 +24,7 @@ $(function() {
     console.log(allTodos)
     for (var key in allTodos) {
       $('ul').append('<li class="todo-item"><a id="' + allTodos[key].id + '" href="#">x</a> ' + allTodos[key].item + '</li>');
+
     }
     console.log(todosArray)
   }
@@ -86,13 +87,14 @@ $(function() {
   // Sort items using jQuery UI
   $(function() {
     var sortEventHandler = function(event, ui) {
-      var arrayToBeSorted = $('.todo-item')
+      var arrayToBeSorted = $('a')
       var listValues = []
-      console.log(arrayToBeSorted[0])
 
       for (var i=0; i<arrayToBeSorted.length; i++) {
-        listValues.push(arrayToBeSorted[i].innerHTML)
+        listValues.push(arrayToBeSorted[i].id)
+        console.log(arrayToBeSorted[i].id)
       }
+      console.log(listValues)
     }
     $("ul").sortable({
       stop: sortEventHandler
