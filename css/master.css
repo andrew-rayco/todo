@@ -22,10 +22,15 @@ h1, li, p, button {
   text-align: center;
 }
 
-ul,
+ul {
+  width: 80%;
+  margin: 0 10% 10%;
+}
+
 #newItemForm {
-  width: 70%;
-  margin: 0 15% 10%;
+  width: 80%;
+  margin: 0 10%;
+  padding: 0;
 }
 
 ul {
@@ -34,10 +39,11 @@ ul {
 
 li {
   color: #033f5f;
+  font-size: 1.5em;
   list-style: none;
   text-align: center;
   border-radius: 5px;
-  padding: .2em .5em;
+  padding: .4em .5em;
   margin-bottom: .5em;
   background: #8fb4b4;
   font-weight: 600;
@@ -57,7 +63,7 @@ a {
 #itemDescription {
   font-family: 'Ubuntu', sans-serif;
   -webkit-border-radius: 5px;
-  padding: 5px 0; 
+  padding: .8em 0;
   border-radius: 5px;
   background: #ddd;
   color: #222;
@@ -72,11 +78,11 @@ a {
   font-family: 'Ubuntu', sans-serif;
   background: #8fb4b4;
   -webkit-border-radius: 5px;
-  border-radius: 5px; 
-  width: 22%;
+  border-radius: 5px;
+  width: 24%;
   cursor:pointer;
-  padding: 6px 0;
-  border: 0;
+  padding: .8em 0;
+  border: .15em solid #8fb4b4;
   margin-right: 0;
   color: #033f5f;
   font-weight: 600;
@@ -91,4 +97,3 @@ a {
   color: #db9494;
   font-weight: bold;
 }
-
