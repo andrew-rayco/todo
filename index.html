@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html>
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+  <meta name="application-name" content="Shopping List" />
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="images/mstile-144x144.png" />
   <title>Shopping</title>
   <link rel="stylesheet" href="css/master.css">
   <!-- <link rel="stylesheet" href="jquery-ui.min.css"> -->
   <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
   <script src="js/external/jquery.js"></script>
   <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-  <body>
-    <div id="page">
-      <h1 id="header">Shopping.</h1>
-      <ul></ul>
-      <form id="newItemForm">
-        <input type="text" id="itemDescription" placeholder="Put your shit." />
-        <input type="submit" id="addButton" value="Pow" />
-      </form>
-      <p><a href="#" class="refresh">Refresh</a></p>
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCtH5yM3UrExaeKTvqhRZDZBFWrC9Wq0jg",
-    authDomain: "our-shopping-list-ff309.firebaseapp.com",
-    databaseURL: "https://our-shopping-list-ff309.firebaseio.com",
-    projectId: "our-shopping-list-ff309",
-    storageBucket: "",
-    messagingSenderId: "426826679650"
-  };
-  firebase.initializeApp(config);
-</script>
-<script type="text/javascript" src="js/todo.js"></script>
-  </body>
+</head>
+
+<body>
+  <div id="page">
+    <h1 id="header">Shopping.</h1>
+    <ul></ul>
+    <form id="newItemForm">
+      <input type="text" id="itemDescription" placeholder="Put your shit." />
+      <input type="submit" id="addButton" value="Pow" />
+    </form>
+    <!-- <p><a href="#" class="refresh">Refresh</a></p> -->
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCtH5yM3UrExaeKTvqhRZDZBFWrC9Wq0jg",
+      authDomain: "our-shopping-list-ff309.firebaseapp.com",
+      databaseURL: "https://our-shopping-list-ff309.firebaseio.com",
+      projectId: "our-shopping-list-ff309",
+      storageBucket: "",
+      messagingSenderId: "426826679650"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script type="text/javascript" src="js/todo.js"></script>
+</body>
+
 </html>

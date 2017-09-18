@@ -100,7 +100,8 @@ $(function() {
   });
 
   // Refresh button
-  $('.refresh').click(function() {
+  $('.refresh').click(function(e) {
+    e.preventDefault()
     location.reload(true)
   })
 
