@@ -21,12 +21,9 @@ $(function() {
     // clear the ul of li's
     $('ul').empty()
 
-    console.log(allTodos)
     for (var key in allTodos) {
       $('ul').append('<li class="todo-item"><a id="' + allTodos[key].id + '" href="#">x</a> ' + allTodos[key].item + '</li>');
-
     }
-    console.log(todosArray)
   }
 
   function addItem() {
@@ -38,26 +35,11 @@ $(function() {
         // Add item to list if not empty string
         var newText = $textInput.val();
         todosArray.push(newText)
-        // $('ul').append('<li class="todo-item"><a href="#">x</a> ' + newText + '</li>');
+
+        // Clear text field
         $textInput.val('');
 
-
-        function addItemToDb(newListItem) {
-
-          // Get a key for a new Post.
-          var newPostKey = firebase.database().ref().child('posts').push().key;
-          var singleItem = {
-            item: newListItem,
-            id: newPostKey,
-            order: todosArray.length
-          };
-          console.log(newPostKey)
-
-          database.ref('list/' + newPostKey).set(singleItem)
-        }
-
         addItemToDb(newText)
-
       } else {
         var $newMsg = $($errorMsg).hide().fadeIn(1000);
         $form.prepend($newMsg);
@@ -84,9 +66,24 @@ $(function() {
   };
   addItem();
 
+  function addItemToDb(newListItem) {
+    // Get a key for a new Post.
+    var newPostKey = firebase.database().ref().child('posts').push().key;
+    var singleItem = {
+      item: newListItem,
+      id: newPostKey,
+      order: todosArray.length
+    };
+
+    database.ref('list/' + newPostKey).set(singleItem)
+  }
+
   // Sort items using jQuery UI
   $(function() {
     var sortEventHandler = function(event, ui) {
+      console.log(event)
+      console.log(ui)
+
       var arrayToBeSorted = $('a')
       var listValues = []
 
@@ -97,7 +94,7 @@ $(function() {
       console.log(listValues)
     }
     $("ul").sortable({
-      stop: sortEventHandler
+      change: sortEventHandler
     });
     $("ul").disableSelection();
   });
