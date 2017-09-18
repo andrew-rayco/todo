@@ -47,7 +47,7 @@ li {
   list-style: none;
   text-align: center;
   border-radius: 5px;
-  padding: .4em .5em;
+  padding: .4em .4em .3em;
   margin-bottom: .3em;
   background: #8fb4b4;
   font-weight: 600;
@@ -57,12 +57,17 @@ li a {
   float: left;
   color: #de7c7c;
   text-shadow: 1px 1px 2px #033f5f;
+  margin-top: -.1em;
 }
 
 a {
   color: #666;
   text-decoration: none;
   padding-right: .3em;
+}
+
+span {
+  margin-left: -0.7em;
 }
 
 #itemDescription {
@@ -76,7 +81,6 @@ a {
   text-align: center;
   margin-left: 0;
   border: 2px solid #ddd;
-  margin-bottom: 3em;
 }
 
 #addButton {
@@ -97,6 +101,12 @@ a {
 #itemDescription:focus {
     border: 2px solid #fff;
     background: #fff;
+}
+
+.refresh {
+  margin-bottom: 3em;
+  font-size: .7em;
+  color: #ddd;
 }
 
 .error {
