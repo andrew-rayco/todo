@@ -9,44 +9,22 @@ $(function() {
   var $errorMsg = $($.parseHTML(emptyItemText));
   var $listItems = $('li');
   var $listItemText = $('li a').text;
+  var todosArray = []
+  var database = firebase.database();
 
-  // Check for existing JSON list data
-  var xhr = new XMLHttpRequest();
+  database.ref('list').on('value', function(snapshot) {
+    // snapshot.val() gives the current state of the db
+    displayItems(snapshot.val())
+  })
 
-  xhr.onload = function() {
-    if (xhr.status === 200) {
+  function displayItems(allTodos) {
+    // clear the ul of li's
+    $('ul').empty()
 
-      // parse JSON object into JavaScript object
-      responseObject = JSON.parse(xhr.responseText);
-
-      // loop through list items and add to list
-      for (var i=0; i < responseObject.list.length; i++) {
-
-        // If list is currently empty, add JSON items immediately
-        if ($listItems.length < 1) {
-          $('ul').append('<li class="todo-item"><a href="#">x</a> ' + responseObject.list[i].item + '</li>');
-        } else {
-          for (var j=0; j < $listItems.length; j++) {
-            // Get list item string and remove the first character (the close x)
-            var $listItemNoX = $listItems.eq(j).text().slice(1);
-            if (responseObject.list[i].item !== $listItemNoX) {
-              $('ul').append('<li class="todo-item"><a href="#">x</a> ' + responseObject.list[i].item + '</li>');
-            } else {
-              $form.prepend('<p class="error">Item already exists</p>');
-              $('form p').delay(1000).fadeOut(300);
-            }
-          }
-        }
-      }
-    } else {
-      // Show error message and code if XMLHttpRequest fails
-      var $jsonFailMsg = '<p class="error">Failed to find list. Error ' + xhr.status + '</p>';
-      $form.prepend($jsonFailMsg);
+    for (var key in allTodos) {
+      $('ul').append('<li class="todo-item"><a id="' + allTodos[key].id + '" href="#">x</a> ' + allTodos[key].item + '</li>');
     }
-  };
-
-  xhr.open('GET', 'json/list.json', 'true');
-  xhr.send(null);
+  }
 
   function addItem() {
     // Add new item to list
@@ -56,16 +34,12 @@ $(function() {
 
         // Add item to list if not empty string
         var newText = $textInput.val();
-        $('ul').append('<li class="todo-item"><a href="#">x</a> ' + newText + '</li>');
+        todosArray.push(newText)
+
+        // Clear text field
         $textInput.val('');
 
-        // Add item to JSON file ================== Trying to...
-        // var listLength = responseObject;
-        // console.log($listItemText);
-        // responseObject.list[1].item = newText;
-        // xhr.open('POST', 'json/list.json', 'true');
-        // xhr.send(null);
-
+        addItemToDb(newText)
       } else {
         var $newMsg = $($errorMsg).hide().fadeIn(1000);
         $form.prepend($newMsg);
@@ -77,7 +51,7 @@ $(function() {
       }
 
       if ($('li').length >= 1) {
-          $('ul').css("margin-bottom", "5%");
+        $('ul').css("margin-bottom", "5%");
       }
     });
 
@@ -85,15 +59,44 @@ $(function() {
     $('ul').on('click', '.todo-item>a', function(e) {
       e.preventDefault();
       $(this).parent().fadeOut(400);
+      database.ref('list/' + e.target.id).remove()
+      console.log(e.target.id)
     });
 
   };
   addItem();
 
+  function addItemToDb(newListItem) {
+    // Get a key for a new Post.
+    var newPostKey = firebase.database().ref().child('posts').push().key;
+    var singleItem = {
+      item: newListItem,
+      id: newPostKey,
+      order: todosArray.length
+    };
+
+    database.ref('list/' + newPostKey).set(singleItem)
+  }
+
   // Sort items using jQuery UI
-  $( function() {
-    $( "ul" ).sortable();
-    $( "ul" ).disableSelection();
+  $(function() {
+    var sortEventHandler = function(event, ui) {
+      console.log(event)
+      console.log(ui)
+
+      var arrayToBeSorted = $('a')
+      var listValues = []
+
+      for (var i=0; i<arrayToBeSorted.length; i++) {
+        listValues.push(arrayToBeSorted[i].id)
+        console.log(arrayToBeSorted[i].id)
+      }
+      console.log(listValues)
+    }
+    $("ul").sortable({
+      change: sortEventHandler
+    });
+    $("ul").disableSelection();
   });
 
 });
