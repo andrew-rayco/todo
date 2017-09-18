@@ -22,7 +22,7 @@ $(function() {
     $('ul').empty()
 
     for (var key in allTodos) {
-      $('ul').append('<li class="todo-item"><a id="' + allTodos[key].id + '" href="#">x</a> ' + allTodos[key].item + '</li>');
+      $('ul').append('<li class="todo-item"><a id="' + allTodos[key].id + '" href="#">x</a>' + allTodos[key].item + '</li>');
     }
   }
 

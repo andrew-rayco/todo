@@ -4,6 +4,10 @@ grey: 999999
 blue: 669999
 dk blgrn: 003333 */
 
+body {
+  background-color: #007991;
+}
+
 h1, li, p, button {
   font-family: 'Ubuntu', sans-serif;
   color: #bcd8c1;
@@ -39,12 +43,12 @@ ul {
 
 li {
   color: #033f5f;
-  font-size: 1.5em;
+  font-size: 1.4em;
   list-style: none;
   text-align: center;
   border-radius: 5px;
   padding: .4em .5em;
-  margin-bottom: .5em;
+  margin-bottom: .3em;
   background: #8fb4b4;
   font-weight: 600;
 }
@@ -52,6 +56,7 @@ li {
 li a {
   float: left;
   color: #de7c7c;
+  text-shadow: 1px 1px 2px #033f5f;
 }
 
 a {
@@ -67,7 +72,7 @@ a {
   border-radius: 5px;
   background: #ddd;
   color: #222;
-  width: 73%;
+  width: 72%;
   text-align: center;
   margin-left: 0;
   border: 2px solid #ddd;
@@ -84,6 +89,7 @@ a {
   padding: .8em 0;
   border: .15em solid #8fb4b4;
   margin-right: 0;
+  margin-left: 1%;
   color: #033f5f;
   font-weight: 600;
 }
