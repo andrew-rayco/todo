@@ -104,12 +104,6 @@ span {
     background: #fff;
 }
 
-.refresh {
-  margin-bottom: 3em;
-  font-size: .7em;
-  color: #ddd;
-}
-
 .error {
   color: #db9494;
   font-weight: bold;
