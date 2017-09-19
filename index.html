@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,6 +26,13 @@
 <body>
   <div id="page">
     <h1 id="header">Shopping.</h1>
+    <div class="loading">
+      <svg width="40px" height="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-rolling" style="background: none;">
+        <circle cx="50" cy="50" fill="none" ng-attr-stroke="{{config.color}}" ng-attr-stroke-width="{{config.width}}" ng-attr-r="{{config.radius}}" ng-attr-stroke-dasharray="{{config.dasharray}}" stroke="#bcd8c1" stroke-width="14" r="35" stroke-dasharray="164.93361431346415 56.97787143782138" transform="rotate(30.395 50 50)">
+          <animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="0.6s" begin="0s" repeatCount="indefinite"></animateTransform>
+        </circle>
+      </svg>
+    </div>
     <ul></ul>
     <form id="newItemForm">
       <input type="text" id="itemDescription" placeholder="Put your shit." />

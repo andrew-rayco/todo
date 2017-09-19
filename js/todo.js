@@ -12,8 +12,12 @@ $(function() {
   var todosArray = []
   var database = firebase.database();
 
+  // loading
+  var $load = $('.loading')
+
   database.ref('list').on('value', function(snapshot) {
     // snapshot.val() gives the current state of the db
+    $load.hide()
     displayItems(snapshot.val())
   })
 

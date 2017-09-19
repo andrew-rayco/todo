@@ -104,6 +104,10 @@ span {
     background: #fff;
 }
 
+.loading {
+  margin-top: 3em;
+}
+
 .error {
   color: #db9494;
   font-weight: bold;
