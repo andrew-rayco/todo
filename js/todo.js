@@ -109,4 +109,13 @@ $(function() {
     location.reload(true)
   })
 
+  /* ==========================
+  /* jQuery mobile code
+  /* ========================== */
+
+  $('ul').on("swipe", function(e) {
+    alert('whaaat')
+  })
+
+
 });
