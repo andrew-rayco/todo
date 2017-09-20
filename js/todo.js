@@ -83,30 +83,35 @@ $(function() {
   }
 
   // Sort items using jQuery UI
-  $(function() {
-    var sortEventHandler = function(event, ui) {
-      console.log(event)
-      console.log(ui)
+  var sortEventHandler = function(event, ui) {
+    console.log(event)
+    console.log(ui)
 
-      var arrayToBeSorted = $('a')
-      var listValues = []
+    var arrayToBeSorted = $('a')
+    var listValues = []
 
-      for (var i=0; i<arrayToBeSorted.length; i++) {
-        listValues.push(arrayToBeSorted[i].id)
-        console.log(arrayToBeSorted[i].id)
-      }
-      console.log(listValues)
+    for (var i=0; i<arrayToBeSorted.length; i++) {
+      listValues.push(arrayToBeSorted[i].id)
+      console.log(arrayToBeSorted[i].id)
     }
-    $("ul").sortable({
-      change: sortEventHandler
-    });
-    $("ul").disableSelection();
+    console.log(listValues)
+  }
+  $("ul").sortable({
+    change: sortEventHandler,
+    placeholder: 'placeholder'
+
   });
+  $("ul").disableSelection();
 
   // Refresh button
   $('.refresh').click(function(e) {
     e.preventDefault()
     location.reload(true)
   })
+
+
+
+
+
 
 });

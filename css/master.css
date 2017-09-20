@@ -45,6 +45,7 @@ ul {
 li {
   color: #033f5f;
   font-size: 1.4em;
+  height: 1.2em;
   list-style: none;
   text-align: center;
   border-radius: 5px;
@@ -112,4 +113,9 @@ span {
   color: #db9494;
   font-weight: bold;
   text-shadow: 1px 1px 2px #033f5f;
+}
+
+.placeholder {
+  /*height: 1.2em;*/
+  background: #033f5f;
 }
