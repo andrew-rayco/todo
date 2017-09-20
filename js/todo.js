@@ -83,25 +83,23 @@ $(function() {
   }
 
   // Sort items using jQuery UI
-  $(function() {
-    var sortEventHandler = function(event, ui) {
-      console.log(event)
-      console.log(ui)
+  var sortEventHandler = function(event, ui) {
+    console.log(event)
+    console.log(ui)
 
-      var arrayToBeSorted = $('a')
-      var listValues = []
+    var arrayToBeSorted = $('a')
+    var listValues = []
 
-      for (var i=0; i<arrayToBeSorted.length; i++) {
-        listValues.push(arrayToBeSorted[i].id)
-        console.log(arrayToBeSorted[i].id)
-      }
-      console.log(listValues)
+    for (var i=0; i<arrayToBeSorted.length; i++) {
+      listValues.push(arrayToBeSorted[i].id)
+      console.log(arrayToBeSorted[i].id)
     }
-    $("ul").sortable({
-      change: sortEventHandler
-    });
-    $("ul").disableSelection();
+    console.log(listValues)
+  }
+  $("ul").sortable({
+    change: sortEventHandler
   });
+  $("ul").disableSelection();
 
   // Refresh button
   $('.refresh').click(function(e) {
@@ -109,13 +107,9 @@ $(function() {
     location.reload(true)
   })
 
-  /* ==========================
-  /* jQuery mobile code
-  /* ========================== */
 
-  $('ul').on("swipe", function(e) {
-    alert('whaaat')
-  })
+
+
 
 
 });
