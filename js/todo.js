@@ -90,17 +90,15 @@ $(function() {
     var arrayToBeSorted = $('a')
     var listValues = []
 
-    for (var i=0; i<arrayToBeSorted.length; i++) {
+    for (var i = 0; i < arrayToBeSorted.length; i++) {
       listValues.push(arrayToBeSorted[i].id)
       console.log(arrayToBeSorted[i].id)
     }
     console.log(listValues)
   }
-  $("ul").sortable({
-    change: sortEventHandler,
-    placeholder: 'placeholder'
 
-  });
+  // $("ul").sortable({change: sortEventHandler, placeholder: 'placeholder'});
+
   $("ul").disableSelection();
 
   // Refresh button
@@ -108,10 +106,5 @@ $(function() {
     e.preventDefault()
     location.reload(true)
   })
-
-
-
-
-
 
 });
