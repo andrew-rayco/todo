@@ -97,7 +97,7 @@ $(function() {
     console.log(listValues)
   }
 
-  $("ul").sortable({change: sortEventHandler, placeholder: 'placeholder'});
+  // $("ul").sortable({change: sortEventHandler, placeholder: 'placeholder'});
 
   $("ul").disableSelection();
 
