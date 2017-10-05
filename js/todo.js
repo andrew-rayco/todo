@@ -36,8 +36,13 @@ $(function() {
       e.preventDefault();
       if ($textInput.val() !== '') {
 
-        // Add item to list if not empty string
         var newText = $textInput.val();
+
+        if ($textInput.val().indexOf('http') === 0){
+          newText = '<a href="' + $textInput.val() + '">' + $textInput.val() + '</a>'
+        }
+
+        // Add item to list if not empty string
         todosArray.push(newText)
 
         // Clear text field

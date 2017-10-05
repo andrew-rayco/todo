@@ -45,7 +45,7 @@ ul {
 li {
   color: #033f5f;
   font-size: 1.4em;
-  height: 1.2em;
+  min-height: 1.2em;
   list-style: none;
   text-align: center;
   border-radius: 5px;
@@ -53,6 +53,7 @@ li {
   margin-bottom: .3em;
   background: #8fb4b4;
   font-weight: 600;
+  word-wrap: break-word;
 }
 
 li a {
@@ -69,7 +70,8 @@ a {
 }
 
 span {
-  margin-left: -0.7em;
+  margin-left: -0.3em;
+  z-index: 2;
 }
 
 #itemDescription {
