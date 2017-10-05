@@ -45,7 +45,7 @@ ul {
 li {
   color: #033f5f;
   font-size: 1.4em;
-  height: 1.2em;
+  min-height: 1.2em;
   list-style: none;
   text-align: center;
   border-radius: 5px;
@@ -53,6 +53,8 @@ li {
   margin-bottom: .3em;
   background: #8fb4b4;
   font-weight: 600;
+  word-wrap: break-word;
+  user-select:
 }
 
 li a {
@@ -60,16 +62,25 @@ li a {
   color: #de7c7c;
   text-shadow: 1px 1px 2px #033f5f;
   margin-top: -.1em;
+  word-break: break-all;
 }
 
 a {
   color: #666;
   text-decoration: none;
-  padding-right: .3em;
+  margin-right: .3em;
+}
+
+li span a {
+  display: block;
+  width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 span {
-  margin-left: -0.7em;
+  z-index: 100;
 }
 
 #itemDescription {
