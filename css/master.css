@@ -54,6 +54,7 @@ li {
   background: #8fb4b4;
   font-weight: 600;
   word-wrap: break-word;
+  user-select:
 }
 
 li a {
@@ -61,17 +62,25 @@ li a {
   color: #de7c7c;
   text-shadow: 1px 1px 2px #033f5f;
   margin-top: -.1em;
+  word-break: break-all;
 }
 
 a {
   color: #666;
   text-decoration: none;
-  padding-right: .3em;
+  margin-right: .3em;
+}
+
+li span a {
+  display: block;
+  width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 span {
-  margin-left: -0.3em;
-  z-index: 2;
+  z-index: 100;
 }
 
 #itemDescription {

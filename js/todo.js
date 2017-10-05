@@ -38,8 +38,8 @@ $(function() {
 
         var newText = $textInput.val();
 
-        if ($textInput.val().indexOf('http') === 0){
-          newText = '<a href="' + $textInput.val() + '">' + $textInput.val() + '</a>'
+        if (validUrl(newText)) {
+          newText = '<a href="' + newText + '">' + newText + '</a>'
         }
 
         // Add item to list if not empty string
@@ -87,6 +87,15 @@ $(function() {
     database.ref('list/' + newPostKey).set(singleItem)
   }
 
+  function validUrl(str) {
+    var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+    if(!regex .test(str)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   // Sort items using jQuery UI
   var sortEventHandler = function(event, ui) {
     console.log(event)
@@ -104,7 +113,7 @@ $(function() {
 
   // $("ul").sortable({change: sortEventHandler, placeholder: 'placeholder'});
 
-  $("ul").disableSelection();
+  // $("ul").disableSelection();
 
   // Refresh button
   $('.refresh').click(function(e) {
