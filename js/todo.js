@@ -137,7 +137,7 @@ $(function() {
     $('ul').empty()
 
     for (var key in allTodos) {
-      $('ul').append('<li class="todo-item"><a id="' + allTodos[key].id + '" href="#">x</a><span>' + allTodos[key].item + '</span></li>');
+      $('ul').prepend('<li class="todo-item"><a id="' + allTodos[key].id + '" href="#">x</a><span>' + allTodos[key].item + '</span></li>');
     }
   }
 
