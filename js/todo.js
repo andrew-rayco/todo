@@ -37,19 +37,23 @@ $(function() {
     // clear the ul of li's
     $('ul').empty()
 
+    // generate li's for each list item
     for (var key in allTodos) {
       $('ul').prepend('<li class="todo-item"><a id="' + allTodos[key].id + '" href="#">x</a><span>' + allTodos[key].item + '</span></li>');
     }
   }
 
+
   function addItem() {
     // Add new item to list
     $newItemForm.on('submit', function(e) {
-      e.preventDefault();
-      if ($textInput.val() !== '') {
+      e.preventDefault()
 
-        var newText = $textInput.val();
+      var newText = $textInput.val();
 
+      // If input isn't empty and not currently editing existing item, add new item
+      if ($textInput.val() !== '' && $('#addButton').val() !== 'Edit') {
+        // Check if content is a link. If so, make clickable
         if (validUrl(newText)) {
           newText = '<a href="' + newText + '">' + newText + '</a>'
         }
@@ -58,9 +62,16 @@ $(function() {
         todosArray.push(newText)
 
         // Clear text field
-        $textInput.val('');
+        $textInput.val('')
 
         addItemToDb(newText)
+
+      } else if ($('#addButton').val() === 'Edit') {
+        // Edit existing item
+        editItem(entryToBeUpdated, $textInput.val())
+        $textInput.val('')
+        $('#addButton').val('Pow')
+
       } else {
         var $newMsg = $($errorMsg).hide().fadeIn(1000);
         $form.prepend($newMsg);
