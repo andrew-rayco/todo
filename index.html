@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="mobile-web-app-capable" content="yes">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="manifest" href="/images/manifest.json">
   <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#007991">
-  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link rel="shortcut icon" href="images/favicon.ico">
   <meta name="msapplication-config" content="/images/browserconfig.xml">
   <meta name="theme-color" content="#007991">
 
@@ -24,7 +24,6 @@
   <link rel="stylesheet" href="css/master.css">
   <script src="js/external/jquery.js"></script>
   <script type="text/javascript" src="js/external/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="js/external/touchPunch.min.js"></script>
 </head>
 
 <body>
@@ -44,18 +43,7 @@
     <ul></ul>
   </div>
   <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyCtH5yM3UrExaeKTvqhRZDZBFWrC9Wq0jg",
-      authDomain: "our-shopping-list-ff309.firebaseapp.com",
-      databaseURL: "https://our-shopping-list-ff309.firebaseio.com",
-      projectId: "our-shopping-list-ff309",
-      storageBucket: "",
-      messagingSenderId: "426826679650"
-    };
-    firebase.initializeApp(config);
-  </script>
+  <script type="text/javascript" src="js/loading.js"></script>
   <script type="text/javascript" src="js/todo.js"></script>
 </body>
 
