@@ -50,9 +50,10 @@ $(function() {
       e.preventDefault()
 
       var newText = $textInput.val()
+      var buttonValue = $('#addButton').val()
 
       // If input isn't empty and not currently editing existing item, add new item
-      if ($textInput.val() !== '' && $('#addButton').val() !== 'Edit') {
+      if (newText !== '' && buttonValue !== 'Edit') {
         // Check if content is a link. If so, make clickable
         if (validUrl(newText)) {
           newText = '<a href="' + newText + '">' + newText + '</a>'
@@ -66,7 +67,7 @@ $(function() {
 
         addItemToDb(newText)
 
-      } else if ($('#addButton').val() === 'Edit') {
+      } else if (buttonValue === 'Edit') {
         // Edit existing item
         editItem(entryToBeUpdated, $textInput.val())
         $textInput.val('')
