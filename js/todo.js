@@ -2,12 +2,12 @@ $(function() {
 
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyCtH5yM3UrExaeKTvqhRZDZBFWrC9Wq0jg",
-    authDomain: "our-shopping-list-ff309.firebaseapp.com",
-    databaseURL: "https://our-shopping-list-ff309.firebaseio.com",
-    projectId: "our-shopping-list-ff309",
-    storageBucket: "",
-    messagingSenderId: "426826679650"
+    apiKey: "AIzaSyCWt2XPaYIBeI3n6QoiIv-EGJ9dom8sIq0",
+    authDomain: "shopping-list-public.firebaseapp.com",
+    databaseURL: "https://shopping-list-public.firebaseio.com",
+    projectId: "shopping-list-public",
+    storageBucket: "shopping-list-public.appspot.com",
+    messagingSenderId: "48133719146"
   }
   firebase.initializeApp(config)
 

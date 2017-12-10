@@ -111,4 +111,4 @@ if (Math.random() <= 0.5) {
   insultNum = Math.floor(Math.random() * insultArray.length)
   insult = insultArray[insultNum]
 }
-$load.append('<p>Maria is ' + insult + '.</p>')
+$load.append('<p>Andy is ' + insult + '.</p>')
